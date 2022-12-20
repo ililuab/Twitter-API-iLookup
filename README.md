@@ -3,7 +3,7 @@ Een website gemaakt met HTML5, CSS, PHP, Bootstrap en Wordpress(Custom theme).
 
 Een webapplicatie gemaakt met de twitter API.
 
-Zoek Twitter users en bijbehorende tweets bij die user of zoek op Twitter Spaces en doe mee met een gesprek. Klik op de username en ga gelijk naar het account van Twitter user.
+Zoek Twitter realtime users en bijbehorende tweets bij die user of zoek op Twitter Spaces en doe mee met een gesprek. Klik op de username en ga direct naar het account van die Twitter user.
 
 ![Screenshot 2022-12-20 at 09 18 07](https://user-images.githubusercontent.com/94444127/208618750-e68d5bf2-0257-4354-a28b-a022a4a736a1.png)
 ![Screenshot 2022-12-20 at 09 17 19](https://user-images.githubusercontent.com/94444127/208618770-692e1b90-d720-47a3-bbf9-0e99769207d4.png)
