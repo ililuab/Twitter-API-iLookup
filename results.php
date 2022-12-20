@@ -8,9 +8,9 @@ else: echo'Typ a something to search.';
 endif;
 ?>
 <?php
-$BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb";
+$BEARER_TOKEN = "BEARER_TOKEN";
 $tweets  = wp_remote_get('https://api.twitter.com/2/tweets/search/recent?query='.$search.'&tweet.fields=attachments,author_id,created_at,possibly_sensitive,text', [
-    'headers' => ['Authorization'=> 'Bearer AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb'],
+    'headers' => ['Authorization'=> 'Bearer BEARER_TOKEN'],
 ]);
 $body = wp_remote_retrieve_body( $tweets );
 $response = json_decode($body);
@@ -27,7 +27,7 @@ foreach($items as $item ):
 <?php $id = $item->author_id;?>
 <?php
 $users  = wp_remote_get('https://api.twitter.com/2/users/'.$id.'?user.fields=description,id,name,profile_image_url,username,verified', [
-    'headers' => ['Authorization'=> 'Bearer AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb'],
+    'headers' => ['Authorization'=> 'Bearer BEARER_TOKEN'],
  ]);
  $body = wp_remote_retrieve_body( $users );
  $user_response = json_decode($body);
@@ -76,7 +76,7 @@ $users  = wp_remote_get('https://api.twitter.com/2/users/'.$id.'?user.fields=des
 <?php endif; ?>
 <?php
 $account  = wp_remote_get('https://api.twitter.com/2/users/by/username/'.$search.'?user.fields=created_at,description,id,name,profile_image_url,url,username,verified', [
-    'headers' => ['Authorization'=> 'Bearer AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb'],
+    'headers' => ['Authorization'=> 'Bearer BEARER_TOKEN'],
  ]);
  $body = wp_remote_retrieve_body( $account );
  $account_response = json_decode($body);
@@ -101,9 +101,4 @@ $account  = wp_remote_get('https://api.twitter.com/2/users/by/username/'.$search
 <?php else: echo ''; ?>
 <?php endif;?>
 </div>
-<!-- Bearer token: AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb -->
-<!-- Accesstoken: 1595029628057534465-gmuZvn93l2FRASj2h2fxfKoHn25aRQz -->
-<!-- Secrettoken: t0zR3p0JfJvGttN5UKR27Y490O2V0uJzW6y9Co9CTmsY8 -->
-
-<!-- OpenAI secret key: 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 -->
 <?php get_footer(); ?>
