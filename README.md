@@ -1,5 +1,5 @@
 # Twitter-Spaces-and-Tweet-lookup
-Een website gemaakt met HTML5, CSS, PHP, Bootstrap en Wordpress(Custom theme).
+Een website gemaakt met HTML5, SCSS, PHP, JavaScript ,Bootstrap en Wordpress(Custom theme).
 
 Een webapplicatie gemaakt met de twitter API.
 
