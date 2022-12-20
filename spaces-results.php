@@ -12,7 +12,7 @@ endif;?>
 <div class="mb-5 container-fluid main_result_container"><?php
 
 $spaces  = wp_remote_get('https://api.twitter.com/2/spaces/search?query='.$search_space.'&space.fields=created_at,creator_id,ended_at,host_ids,id,invited_user_ids,is_ticketed,lang,participant_count,scheduled_start,speaker_ids,started_at,state,subscriber_count,title,topic_ids,updated_at&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,url,username,verified,withheld', [
-    'headers' => ['Authorization'=> 'Bearer AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb'],
+    'headers' => ['Authorization'=> 'Bearer BEARER_TOKEN'],
 ]);
 $body = wp_remote_retrieve_body( $spaces );
 $response = json_decode($body);
@@ -27,7 +27,7 @@ if($items):
         $space_ID = $item->id;
 
     $spaces_users  = wp_remote_get('https://api.twitter.com/2/users/'.implode(',', $item->host_ids).'?user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,url,username,verified,withheld', [
-    'headers' => ['Authorization'=> 'Bearer AAAAAAAAAAAAAAAAAAAAAOBwjgEAAAAAp1uRJaRHlwv%2B3NQcYjbsg8qA7BA%3DNv5FkTdZWDBzqVFO1G55ywvgjS2RHXrwXgnolH9EjXD2MvuaYb'],
+    'headers' => ['Authorization'=> 'Bearer BEARER_TOKEN'],
 ]);
 $body = wp_remote_retrieve_body( $spaces_users );
 $response_user = json_decode($body);
@@ -66,9 +66,3 @@ else: '';
 endif;?>
 </div>
 <?php get_footer();?>
-
-
-write a random number generator with HTML, CSS and JavaScript
-make it so that it displays a number between 0 and 100
-make is so that is only displays round numbers
-add a blue background gradient and make it overall look modern
